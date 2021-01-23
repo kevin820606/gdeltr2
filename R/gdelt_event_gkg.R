@@ -1193,7 +1193,7 @@ get_gdelt_url_data <-
           gdelt_data %>%
           dplyr::rename(dateTimeDocument = dateTimeDataAdded) %>%
           dplyr::mutate(
-            dateEvent = dateEvent %>% lubridate::ymd,
+            dateEvent = dateEvent %>% lubridate::ymd(),
             dateTimeDocument = dateTimeDocument %>% ymd_hms() %>% lubridate::with_tz(Sys.timezone()),
             nameSource = urlSource %>% urltools::domain() %>% str_replace_all("www.", '')
           )
@@ -1290,7 +1290,7 @@ get_gdelt_url_data <-
           gdelt_data %>%
           dplyr::rename(dateDocument = dateAdded) %>%
           dplyr::mutate(
-            dateEvent = dateEvent %>% lubridate::ymd,
+            dateEvent = dateEvent %>% lubridate::ymd(),
             dateDocument = dateDocument %>% lubridate::ymd
           ) %>%
           suppressWarnings()
@@ -1644,7 +1644,7 @@ get_gdelt_url_data <-
           gdelt_data %>%
           dplyr::rename(dateTimeDocument = dateTimeDataAdded) %>%
           dplyr::mutate(
-            dateEvent = dateEvent %>% lubridate::ymd,
+            dateEvent = dateEvent %>% lubridate::ymd(),
             dateTimeDocument = dateTimeDocument %>% ymd_hms() %>% with_tz(Sys.timezone()),
             nameSource = urlSource %>% domain() %>% str_replace_all("www.", '')
           )
@@ -1742,7 +1742,7 @@ get_gdelt_url_data <-
           gdelt_data %>%
           dplyr::rename(dateDocument = dateAdded) %>%
           dplyr::mutate(
-            dateEvent = dateEvent %>% lubridate::ymd,
+            dateEvent = dateEvent %>% lubridate::ymd(),
             dateDocument = dateDocument %>% lubridate::ymd
           ) %>%
           suppressWarnings()
@@ -1842,7 +1842,7 @@ get_gdelt_url_data <-
           gdelt_data %>%
           dplyr::rename(dateTimeDocument = dateAdded) %>%
           dplyr::mutate(
-            dateEvent = dateEvent %>% lubridate::ymd,
+            dateEvent = dateEvent %>% lubridate::ymd(),
             dateTimeDocument %>% lubridate::ymd_hms() %>% with_tz(Sys.timezone()),
             dateDocument = dateTimeDocument %>% as.Date(),
             nameSource = urlSource %>% domain() %>% str_replace_all("www.", '')
@@ -4508,7 +4508,7 @@ get_data_gkg_day_summary <- function(date_data = "2016-06-01",
 
   date_data <-
     date_data %>%
-    ymd %>% as.Date()
+    ymd()%>% as.Date()
 
 
   if (date_data < "2013-04-01") {
@@ -6190,7 +6190,7 @@ dictionary_gkg_tv_daily_summaries <-
 
   date_data <-
     date_data %>%
-    ymd %>% as.Date()
+    ymd()%>% as.Date()
 
 
   if (date_data < "2009-06-04") {
