@@ -1074,7 +1074,7 @@ get_schema_gkg_mentions <- function() {
 #' @return
 #' @export
 #' @import readr purrr curl dplyr lubridate tidyr stringr
-#' @import data.table fread
+#' @import data.table
 #' @importFrom urltools domain
 #' @examples
 get_gdelt_url_data <-
