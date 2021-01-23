@@ -1291,7 +1291,7 @@ get_gdelt_url_data <-
           dplyr::rename(dateDocument = dateAdded) %>%
           dplyr::mutate(
             dateEvent = dateEvent %>% lubridate::ymd(),
-            dateDocument = dateDocument %>% lubridate::ymd
+            dateDocument = dateDocument %>% lubridate::ymd()
           ) %>%
           suppressWarnings()
 
