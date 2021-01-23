@@ -1074,6 +1074,7 @@ get_schema_gkg_mentions <- function() {
 #' @return
 #' @export
 #' @import readr purrr curl dplyr lubridate tidyr stringr
+#' @import data.table fread
 #' @importFrom urltools domain
 #' @examples
 get_gdelt_url_data <-
@@ -1108,7 +1109,7 @@ get_gdelt_url_data <-
       if (gdelt_cols == 16) {
         gdelt_data <-
           con %>%
-          read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
@@ -1181,7 +1182,7 @@ get_gdelt_url_data <-
       if (gdelt_cols == 61) {
         gdelt_data <-
           con %>%
-          readr::read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
@@ -1220,7 +1221,7 @@ get_gdelt_url_data <-
       if (gdelt_cols == 57) {
         gdelt_data <-
           con %>%
-          readr::read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
@@ -1318,7 +1319,7 @@ get_gdelt_url_data <-
       if (gdelt_cols == 58) {
         gdelt_data <-
           con %>%
-          readr::read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
@@ -1446,7 +1447,7 @@ get_gdelt_url_data <-
       if (gdelt_cols == 27) {
         gdelt_data <-
           con %>%
-          readr::read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
@@ -1560,7 +1561,7 @@ get_gdelt_url_data <-
       if (gdelt_cols == 16) {
         gdelt_data <-
           csv_file_loc %>%
-          read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
@@ -1632,7 +1633,7 @@ get_gdelt_url_data <-
       if (gdelt_cols == 61) {
         gdelt_data <-
           csv_file_loc %>%
-          readr::read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
@@ -1672,7 +1673,7 @@ get_gdelt_url_data <-
       if (gdelt_cols == 57) {
         gdelt_data <-
           csv_file_loc %>%
-          readr::read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
@@ -1771,7 +1772,7 @@ get_gdelt_url_data <-
         load_needed_packages(c('urltools'))
         gdelt_data <-
           csv_file_loc %>%
-          readr::read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
@@ -1901,7 +1902,7 @@ get_gdelt_url_data <-
       if (gdelt_cols == 27) {
         gdelt_data <-
           csv_file_loc %>%
-          readr::read_tsv(col_names = F) %>%
+          data.table::fread(sep = '\t', data.table = FALSE) %>%
           suppressWarnings() %>%
           suppressMessages()
 
